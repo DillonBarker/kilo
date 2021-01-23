@@ -1,1 +1,1 @@
-kilo
+text editor
