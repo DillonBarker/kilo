@@ -7,6 +7,9 @@
 #include <termios.h>
 #include <unistd.h>
 
+/*** defines ***/
+#define CTRL_KEY(k) ((k) & 0x1f)
+
 /*** data ***/
 
 struct termios orig_termios;
@@ -50,13 +53,13 @@ char editorReadKey() {
 /*** input ***/
 
 void editorProcessKeypress() {
-	char c = editorReadKey();
+  char c = editorReadKey();
 
-	switch (c) {
-		case CTRL_KEY('q'):
-			exit(0);
-			break;
-	}
+  switch (c) {
+    case CTRL_KEY('q'):
+      exit(0);
+      break;
+  }
 }
 
 /*** init ***/
